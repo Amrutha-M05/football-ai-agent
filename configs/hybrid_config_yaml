@@ -1,0 +1,64 @@
+# Hybrid Agent Configuration (PPO + LightGBM)
+
+agent:
+  type: 'hybrid'
+  
+  # PPO parameters (inherited from PPO config)
+  hidden_dims: [512, 256]
+  learning_rate: 0.0003
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_epsilon: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  update_epochs: 4
+  batch_size: 64
+  rollout_length: 2048
+  
+  # LightGBM configuration
+  use_lgbm: true
+  lgbm_weight: 0.3  # Weight for LightGBM influence (0-1)
+  lgbm_model_path: 'checkpoints/lgbm_advisor.pkl'
+  integration_method: 'weighted'  # Options: 'weighted', 'filtering', 'reward_shaping'
+  
+  lgbm_config:
+    num_actions: 19
+    num_leaves: 31
+    learning_rate: 0.05
+    feature_fraction: 0.9
+    bagging_fraction: 0.8
+    num_boost_round: 100
+  
+  # Device
+  use_cuda: true
+
+training:
+  episodes: 50000
+  max_steps: 3000
+  eval_frequency: 100
+  save_frequency: 500
+  
+  # Pre-train LightGBM advisor
+  pretrain_lgbm: true
+  lgbm_data_path: 'data/match_data/professional_matches.csv'
+
+environment:
+  scenario: '11_vs_11_stochastic'
+  multi_agent: false
+  frame_skip: 4
+  
+  # Reward shaping
+  reward_shaping: true
+  possession_reward: 0.002  # Increased for team play
+  movement_reward: 0.0002
+  goal_reward: 1.0
+  win_reward: 5.0
+  lose_penalty: -1.0
+  
+  render: false
+
+logging:
+  use_tensorboard: true
+  log_frequency: 10
+  verbose: true

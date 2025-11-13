@@ -1,0 +1,68 @@
+# PPO Agent Configuration for Football AI
+
+agent:
+  type: 'ppo'
+  
+  # Network architecture
+  hidden_dims: [512, 256]
+  
+  # PPO hyperparameters
+  learning_rate: 0.0003
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_epsilon: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  
+  # Training configuration
+  update_epochs: 4
+  batch_size: 64
+  rollout_length: 2048
+  
+  # Device
+  use_cuda: true
+
+training:
+  episodes: 50000
+  max_steps: 3000
+  eval_frequency: 100
+  save_frequency: 500
+  
+  # Curriculum learning
+  use_curriculum: false
+  curriculum_scenarios:
+    - 'academy_empty_goal'
+    - 'academy_empty_goal_close'
+    - 'academy_run_to_score'
+    - 'academy_3_vs_1_with_keeper'
+    - '11_vs_11_easy_stochastic'
+  
+  curriculum_thresholds:
+    - 0.7  # Win rate to progress to next stage
+    - 0.6
+    - 0.5
+    - 0.4
+
+environment:
+  scenario: 'academy_empty_goal'
+  multi_agent: false
+  frame_skip: 4
+  stack_frames: 1
+  
+  # Reward shaping
+  reward_shaping: true
+  possession_reward: 0.001
+  movement_reward: 0.0001
+  goal_reward: 1.0
+  win_reward: 5.0
+  lose_penalty: -1.0
+  
+  # Rendering
+  render: false
+  save_video: false
+
+logging:
+  use_tensorboard: true
+  log_frequency: 10
+  verbose: true
