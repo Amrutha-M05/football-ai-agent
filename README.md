@@ -304,19 +304,7 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for de
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📚 Citation
 
-If you use this code in your research, please cite:
-
-```bibtex
-@misc{football-ai-agent,
-  author = {Your Name},
-  title = {Football AI Agent: Deep Reinforcement Learning in Google Research Football Environment},
-  year = {2025},
-  publisher = {GitHub},
-  url = {https://github.com/yourusername/football-ai-agent}
-}
-```
 
 ## 🙏 Acknowledgments
 
@@ -325,12 +313,3 @@ If you use this code in your research, please cite:
 - Stable-Baselines3 community
 - Real football match data from StatsBomb
 
-## 📧 Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/football-ai-agent](https://github.com/yourusername/football-ai-agent)
-
----
-
-⭐ Star this repo if you find it helpful!# football-ai-agent
