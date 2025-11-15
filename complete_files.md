@@ -168,7 +168,7 @@ cd football-ai-agent
 
 ### Option 2: Git Clone (once uploaded)
 ```bash
-git clone https://github.com/yourusername/football-ai-agent.git
+git clone https://github.com/Amrutha-M05/football-ai-agent.git
 cd football-ai-agent
 ./scripts/setup_project.sh
 ```
@@ -232,7 +232,7 @@ cd football-ai-agent
 
 ---
 
-## 🎯 Next Steps
+## 🎯  Steps
 
 1. **Create project directory structure**
 2. **Copy all 34 files** into appropriate locations
@@ -240,19 +240,8 @@ cd football-ai-agent
 4. **Start training**: `python train.py --agent dqn --episodes 1000`
 5. **Monitor progress**: `tensorboard --logdir outputs/`
 
----
 
-## 📞 Support
-
-All files are provided with:
-- ✅ Detailed comments
-- ✅ Error handling
-- ✅ Type hints
-- ✅ Docstrings
-- ✅ Usage examples
-
-**You're ready to build your Football AI Agent! 🚀⚽🤖**
 
 ---
 
-**Total Deliverables: 34 Complete Files | ~6300+ Lines of Code | 100% Ready**
+**Total Deliverables: 34 Complete Files | ~6300+ Lines of Code 
