@@ -31,9 +31,9 @@ A comprehensive AI agent system for playing football using Deep Reinforcement Le
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Football AI Agent                         │
+│                    Football AI Agent                        │
 ├─────────────────────────────────────────────────────────────┤
-│                                                               │
+│                                                             │
 │  ┌──────────────┐      ┌──────────────┐                     │
 │  │   DQN Agent  │      │   PPO Agent  │                     │
 │  │              │      │              │                     │
@@ -41,9 +41,9 @@ A comprehensive AI agent system for playing football using Deep Reinforcement Le
 │  │ - Q-Network  │      │ - Critic Net │                     │
 │  │ - Target Net │      │ - GAE        │                     │
 │  └──────┬───────┘      └──────┬───────┘                     │
-│         │                     │                              │
-│         └──────────┬──────────┘                              │
-│                    │                                         │
+│         │                     │                             │
+│         └──────────┬──────────┘                             │
+│                    │                                        │
 │         ┌──────────▼───────────┐                            │
 │         │  Hybrid Integration  │                            │
 │         │                      │                            │
@@ -51,7 +51,7 @@ A comprehensive AI agent system for playing football using Deep Reinforcement Le
 │         │  - Action Filtering  │                            │
 │         │  - Reward Shaping    │                            │
 │         └──────────┬───────────┘                            │
-│                    │                                         │
+│                    │                                        │
 │         ┌──────────▼───────────┐                            │
 │         │   GRFE Environment   │                            │
 │         │                      │                            │
@@ -74,7 +74,7 @@ A comprehensive AI agent system for playing football using Deep Reinforcement Le
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/football-ai-agent.git
+git clone https://github.com/Amrutha-M05/football-ai-agent.git
 cd football-ai-agent
 
 # Create virtual environment

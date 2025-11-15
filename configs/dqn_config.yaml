@@ -1,0 +1,49 @@
+# DQN Agent Configuration
+
+agent:
+  type: 'dqn'
+  
+  # Network architecture
+  hidden_dims: [512, 256]
+  
+  # DQN hyperparameters
+  learning_rate: 0.0001
+  gamma: 0.99
+  
+  # Exploration
+  epsilon_start: 1.0
+  epsilon_end: 0.01
+  epsilon_decay: 0.995
+  
+  # Experience replay
+  buffer_size: 100000
+  batch_size: 64
+  
+  # Target network
+  target_update_freq: 1000
+  
+  # Device
+  use_cuda: true
+
+training:
+  episodes: 10000
+  max_steps: 3000
+  eval_frequency: 100
+  save_frequency: 500
+
+environment:
+  scenario: 'academy_empty_goal'
+  frame_skip: 4
+  
+  # Reward shaping
+  reward_shaping: true
+  possession_reward: 0.001
+  movement_reward: 0.0001
+  goal_reward: 1.0
+  win_reward: 5.0
+  lose_penalty: -1.0
+
+logging:
+  use_tensorboard: true
+  log_frequency: 10
+  verbose: true
